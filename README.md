@@ -1,18 +1,29 @@
 # Aktywny firewall 
 # Spis treści
 - [Snort](#snort)
-  + [Instalacja Snort na Ubuntu 16.04](#instalacja-snort-na-ubuntu-16.04)
+  + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
+  + [Pliki konfiguracyjne](#pliki-konfiguracyjne)
 
 # Snort
 
-## Instalacja Snort na Ubuntu 16.04
-
+## Instalacja Snort na Ubuntu
+Ubuntu 16.04:
 ```console
 sudo apt-get update
-# install dependencies:
+# instalacja zaleznosci dla snort:
 sudo apt-get install libpcap-dev bison flex
-# install snort:
+# instalacja snort:
 sudo apt-get install snort
-# check installation:
+# sprawdzenie instalacji:
 man snort
+```
+## Pliki konfiguracyjne
+Snort 
+
+```console
+cd /etc/snort
+ls
+# Najwazniejsze z plikow:
+snort.conf -> konfiguracja snort
+rules -> folder z regułami dopasowania do żądań
 ```
