@@ -29,6 +29,11 @@ snort.conf
 rules 
 ```
 ## Wyłączenie domyślnych reguł
+Najpierw należy nadać dla pliku odpowiednie prawa:
+```console
+sudo chmod 777 snort.conf
+```
+
 W pliku snort.conf należy wykomentować wszystkie 'include' znajdujące się w kroku 7:
 
 ![01](https://user-images.githubusercontent.com/39568472/79751141-61b31e00-8312-11ea-89d4-e6d2f3bfa71c.PNG)
