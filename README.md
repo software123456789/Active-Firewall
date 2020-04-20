@@ -22,6 +22,6 @@ man snort
 cd /etc/snort
 ls
 # Najwazniejsze z plikow:
-snort.conf -> konfiguracja snort
-rules -> folder z regułami dopasowania do żądań
+snort.conf  # konfiguracja snort
+rules # folder z regułami dopasowania do żądań
 ```
