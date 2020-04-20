@@ -71,6 +71,6 @@ snort -d -l /var/log/snort/ -h {YOUR_HOST_IP}/24 -A console -c /etc/snort/snort.
 # -A console -> log to console
 # -c file -> configuration file
 ```
-YOUR_HOST_IP to adres, który możemy sprawdzić korzystając z komendy ifconfig. Jeśli wejdziemy na dowolną stronę w przeglądarce to powinniśmy przy tej konfiguracji dostać alert tcp w konsoli. Aby uruchomić alerr icmp możemy wysłać ping na naszą domyślną bramę, którą możemy sprawdzić komendą ip route.  
+YOUR_HOST_IP to adres, który możemy sprawdzić korzystając z komendy ifconfig. Jeśli wejdziemy na dowolną stronę w przeglądarce to powinniśmy przy tej konfiguracji dostać alert tcp w konsoli. Aby uruchomić alert icmp możemy wysłać ping na naszą domyślną bramę, którą możemy sprawdzić komendą ip route.  
 
 
