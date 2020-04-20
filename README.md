@@ -25,9 +25,9 @@ snort -V
 cd /etc/snort
 ls
 # Najwazniejsze z plikow:
-# konfiguracja snort
+# konfiguracja snort:
 snort.conf  
-# folder z regułami dopasowania do żądań
+# folder z regułami dopasowania do żądań:
 rules 
 ```
 ## Wyłączenie domyślnych reguł
@@ -50,9 +50,11 @@ sudo chmod 777 local.rules
 ```
 Następnie możemy wpisać do niego testową regułę np. przy użyciu edytora gedit:
 ```console
-alert tcp any any -> $HOME_NET 21 (msg:"FTP connection attempt"; sid: 1000001; rev:1;)
+alert icmp any any -> any any (msg:"ICMP connection attempt"; sid:1000004; rev:1;)
+
+alert tcp any any -> any any (msg:"TCP connection attempt"; sid:1000001; rev:1;)
 ```
-Ta reguła wykrywa dowolne połączenia FTP. Zapisujemy i zamykamy plik.
+Powyższe reguły to reguły testowe, które powodują wypisanie alarmu przy dowolnym połączeniu TCP lub ICMP.
 
 ## Testowanie konfiguracji
 Sprawdzamy poprawność konfiguracji:
@@ -62,11 +64,13 @@ sudo snort -T -c /etc/snort/snort.conf
 W wyniku powinniśmy dostać komunikat 'Snort successfully validated the configuration'. Jeśli wszystko jest ok to możemy teraz uruchomić Snort:
 
 ```console
-sudo snort -d -l /var/log/snort/ -A console -c /etc/snort/snort.conf 
+snort -d -l /var/log/snort/ -h {YOUR_HOST_IP}/24 -A console -c /etc/snort/snort.conf
 # -d  -> dumps application layer data
 # -l dir -> logging directory
+# -h home_net 
 # -A console -> log to console
 # -c file -> configuration file
-# 
 ```
+YOUR_HOST_IP to adres, który możemy sprawdzić korzystając z komendy ifconfig. Jeśli wejdziemy na dowolną stronę w przeglądarce to powinniśmy przy tej konfiguracji dostać alert tcp w konsoli. Aby uruchomić alerr icmp możemy wysłać ping na naszą domyślną bramę, którą możemy sprawdzić komendą ip route.  
+
 
