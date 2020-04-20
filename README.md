@@ -18,7 +18,7 @@ sudo apt-get install libpcap-dev bison flex
 # instalacja snort:
 sudo apt-get install snort
 # sprawdzenie instalacji:
-man snort
+snort -V
 ```
 ## Pliki konfiguracyjne dla Snort
 ```console
