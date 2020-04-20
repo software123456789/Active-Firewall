@@ -4,6 +4,8 @@
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
+  + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
+  + [Testowanie konfiguracji](#testowanie-konfiguracji)
 
 # Snort
 
@@ -39,6 +41,24 @@ Dzięki temu unikniemy analizowania nieistotnych z punktu widzenia projektu zdar
 
 ![01](https://user-images.githubusercontent.com/39568472/79751141-61b31e00-8312-11ea-89d4-e6d2f3bfa71c.PNG)
 
+## Utworzenie własnych reguł
+Własne reguły umieszczamy w pliku /etc/snort/rules/local.rules
 
+Najpierw nadejmy mu prawa:
+```console
+sudo chmod 777 local.rules
+```
+Następnie możemy wpisać do niego testową regułę np. przy użyciu edytora gedit:
+```console
+alert tcp any any -> $HOME_NET 21 (msg:"FTP connection attempt"; sid: 1000001; rev:1;)
+```
+Ta reguła wykrywa dowolne połączenia FTP. Zapisujemy i zamykamy plik.
+
+## Testowanie konfiguracji
+Sprawdzamy poprawność konfiguracji:
+```console
+sudo snort -T -c /etc/snort/snort.conf
+```
+W wyniku powinniśmy dostać komunikat 'Snort successfully validated the configuration'.
 
 
