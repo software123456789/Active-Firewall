@@ -59,6 +59,14 @@ Sprawdzamy poprawność konfiguracji:
 ```console
 sudo snort -T -c /etc/snort/snort.conf
 ```
-W wyniku powinniśmy dostać komunikat 'Snort successfully validated the configuration'.
+W wyniku powinniśmy dostać komunikat 'Snort successfully validated the configuration'. Jeśli wszystko jest ok to możemy teraz uruchomić Snort:
 
+```console
+sudo snort -d -l /var/log/snort/ -A console -c /etc/snort/snort.conf 
+# -d  -> dumps application layer data
+# -l dir -> logging directory
+# -A console -> log to console
+# -c file -> configuration file
+# 
+```
 
