@@ -2,7 +2,7 @@
 # Spis treści
 - [Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
-  + [Pliki konfiguracyjne](#pliki-konfiguracyjne)
+  + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
 
 # Snort
 
@@ -17,9 +17,7 @@ sudo apt-get install snort
 # sprawdzenie instalacji:
 man snort
 ```
-## Pliki konfiguracyjne
-Snort 
-
+## Pliki konfiguracyjne dla Snort
 ```console
 cd /etc/snort
 ls
