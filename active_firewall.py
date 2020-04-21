@@ -8,23 +8,26 @@ print("Firewall is active")
 
 attack_alerts = ["LAND ATTACK ALERT", "TCP PORT SCAN ALERT", "UDP FLOOD ALERT"]
 IP_REGEX = r"(\d{1,3}\.){3}\d{1,3}"
+OPTIONAL_PORT_REGEX = r"(:\d{1,5})+"
+IP_PORT_REGEX = IP_REGEX + OPTIONAL_PORT_REGEX
+
 
 def getRule(ip, port, protocol):
 	rule = "INPUT " + " -s " + str(ip) + " -j" + " DROP"
 	return '' if rule is None else str(rule)
 
 def addRule(allert, sourceIp):
-	print('Adding rule: ' + allert)
 	rule = getRule(sourceIp,'', '')
-	print('Rule'+ rule)
+	print('Adding rule :  '+ rule)
 	os.system(f"/sbin/iptables -A {rule}")
 
 def findIpAddress(line):
-	matched = re.search(IP_REGEX + " -> " + IP_REGEX, line);
+	matched = re.search(IP_PORT_REGEX + " -> " + IP_PORT_REGEX, line);
 	print(matched)
 	if matched is not None:
-		print('Matched')
-		return matched.group().split(" -> ")[0]
+		ipport = matched.group().split(" -> ")[0]
+		ip = ip = re.search(IP_REGEX, ipport).group()
+		return ip
 
 def activeFirewall(line):
 
