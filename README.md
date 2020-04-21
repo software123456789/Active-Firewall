@@ -88,6 +88,6 @@ Następnie musimy utworzyć sieć dla naszych wirtualnych maszyn, wszystko pokaz
 
 https://www.youtube.com/watch?v=vReAkOq-59I
 
-Teraz uruchamiamy obie maszyny naraz, na tej na której mamy Sorta uruchamiany go. Sprawdzamy też IP komendą ifconfig. Na drugim hoście też sprawdzamy tą komendą IP, powinny być z tej samej sieci, ale różne. Z hosta atakującego wysyłamy ping do tego na którym działa Snort. Powinien się wyświetlić Alert. 
+Teraz uruchamiamy obie maszyny naraz, na tej na której mamy Snorta uruchamiany go. Sprawdzamy też IP komendą ifconfig. Na drugim hoście też sprawdzamy tą komendą IP, powinny być z tej samej sieci, ale różne. Z hosta atakującego wysyłamy ping do tego na którym działa Snort. Powinien się wyświetlić Alert. 
  
 
