@@ -6,6 +6,7 @@
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
+  + [Testowanie Snort na dwóch hostach](testowanie-snort-na-dwóch-hostach)
 
 # Snort
 
@@ -71,6 +72,22 @@ snort -d -l /var/log/snort/ -h {YOUR_HOST_IP}/24 -A console -c /etc/snort/snort.
 # -A console -> log to console
 # -c file -> configuration file
 ```
-YOUR_HOST_IP to adres, który możemy sprawdzić korzystając z komendy ifconfig. Jeśli wejdziemy na dowolną stronę w przeglądarce to powinniśmy przy tej konfiguracji dostać alert tcp w konsoli. Aby uruchomić alert icmp możemy wysłać ping na naszą domyślną bramę, którą możemy sprawdzić komendą ip route.  
+YOUR_HOST_IP to adres ip, który możemy sprawdzić korzystając z komendy ifconfig. Jeśli wejdziemy na dowolną stronę w przeglądarce to powinniśmy przy tej konfiguracji dostać alert tcp w konsoli. 
 
+Aby uruchomić alert icmp możemy wysłać ping na ip naszej domyślnej bramy, którą możemy sprawdzić komendą ip route.  
+
+## Testowanie Snort na dwóch hostach
+
+Jeśli sprawdziliśmy już, że działają alerty na jednym hoście, możemy teraz przejść do próby przeprowadzenia bardziej rzeczywistego testu. Spróbujemy wysłać ping z jednego hosta na drugi i uzyskać alert na jednym z hostów. Aby to zrobić najpierw potrzebujemy mieć dwie maszyny wirtualne, np. Linux Ubuntu oraz Linux Kali (obraz Kali do pobrania: https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/#1572305786534-030ce714-cc3b)
+
+Link do całego filmiku z instalacją Kali: https://www.youtube.com/watch?v=TGOiAsSdADs
+
+![image](https://user-images.githubusercontent.com/39568472/79867365-896fb800-83de-11ea-9725-b315b862ed35.png)
+
+Następnie musimy utworzyć sieć dla naszych wirtualnych maszyn, wszystko pokazane jest w tym filmiku:
+
+https://www.youtube.com/watch?v=vReAkOq-59I
+
+Teraz uruchamiamy obie maszyny naraz, na tej na której mamy Sorta uruchamiany go. Sprawdzamy też IP komendą ifconfig. Na drugim hoście też sprawdzamy tą komendą IP, powinny być z tej samej sieci, ale różne. Z hosta atakującego wysyłamy ping do tego na którym działa Snort. Powinien się wyświetlić Alert. 
+ 
 
