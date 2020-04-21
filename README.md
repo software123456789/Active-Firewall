@@ -6,7 +6,7 @@
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
-  + [Testowanie Snort na dwóch hostach](testowanie-snort-na-dwóch-hostach)
+  + [Testowanie Snort na dwóch hostach](testowanie-snort-na-dwoch-hostach)
 
 # Snort
 
