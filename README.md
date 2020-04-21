@@ -6,7 +6,7 @@
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
-  + [Testowanie Snort na dwóch hostach](testowanie-snort-na-dwoch-hostach)
+  + [Testowanie snort na dwóch hostach](testowanie-snort-na-dwóch-hostach)
 
 # Snort
 
@@ -76,7 +76,7 @@ YOUR_HOST_IP to adres ip, który możemy sprawdzić korzystając z komendy ifcon
 
 Aby uruchomić alert icmp możemy wysłać ping na ip naszej domyślnej bramy, którą możemy sprawdzić komendą ip route.  
 
-## Testowanie Snort na dwóch hostach
+## Testowanie snort na dwóch hostach
 
 Jeśli sprawdziliśmy już, że działają alerty na jednym hoście, możemy teraz przejść do próby przeprowadzenia bardziej rzeczywistego testu. Spróbujemy wysłać ping z jednego hosta na drugi i uzyskać alert na jednym z hostów. Aby to zrobić najpierw potrzebujemy mieć dwie maszyny wirtualne, np. Linux Ubuntu oraz Linux Kali (obraz Kali do pobrania: https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/#1572305786534-030ce714-cc3b)
 
