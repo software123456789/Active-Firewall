@@ -3,6 +3,8 @@
 import sys
 import os
 import re
+import subprocess
+import io
 
 print("Firewall is active")
 
@@ -11,31 +13,43 @@ IP_REGEX = r"(\d{1,3}\.){3}\d{1,3}"
 OPTIONAL_PORT_REGEX = r"(:\d{1,5})+"
 IP_PORT_REGEX = IP_REGEX + OPTIONAL_PORT_REGEX
 
+def checkDangerIpBlocked(rule):
+	proc = subprocess.Popen(['iptables-save'], stdout=subprocess.PIPE)
+	match = False
+	for line in io.TextIOWrapper(proc.stdout, encoding="utf-8"):
+		if not line:
+			break
+		match = (rule in line)
+
+		if match:
+			break
+
+	return match
 
 def getRule(ip, port, protocol):
-	rule = "INPUT " + " -s " + str(ip) + " -j" + " DROP"
+	rule = "-A INPUT " + "-s " + str(ip)+"/32" + " -j" + " DROP"
 	return '' if rule is None else str(rule)
 
-def addRule(allert, sourceIp):
-	rule = getRule(sourceIp,'', '')
-	print('Adding rule :  '+ rule)
-	os.system(f"/sbin/iptables -A {rule}")
+def addRule(allert, sourceIp, rule):
+	print('Adding rule: ' + rule)
+	os.system(f"/sbin/iptables {rule}")
 
-def findIpAddress(line):
+def findIpAddress(line, num):
 	matched = re.search(IP_PORT_REGEX + " -> " + IP_PORT_REGEX, line);
-	print(matched)
 	if matched is not None:
-		ipport = matched.group().split(" -> ")[0]
+		ipport = matched.group().split(" -> ")[num]
 		ip = ip = re.search(IP_REGEX, ipport).group()
 		return ip
 
 def activeFirewall(line):
-
 	for allert in attack_alerts:
 		if allert in line:
 			print('Find attack: ' +  allert)
-			sourceIp = findIpAddress(line)
-			addRule(allert, sourceIp)
+			sourceIp = findIpAddress(line,0)
+			destIp = findIpAddress(line,1)
+			rule = getRule(sourceIp,'', '')
+			if not checkDangerIpBlocked(rule):
+				addRule(allert, sourceIp,rule)
 
 for line in sys.stdin:
 	activeFirewall(line)
