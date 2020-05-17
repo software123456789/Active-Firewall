@@ -1,5 +1,7 @@
 # Aktywny firewall 
 # Spis treści
+- [Opis projektu](#opis-projektu)
+  + [Narzędznia i architektura](#narzędzia-i-architektura)
 - [Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
@@ -7,6 +9,20 @@
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
   + [Testowanie snort na dwóch hostach](#testowanie-snort-na-dwóch-hostach)
+
+# Opis projektu
+Celem tego projektu jest opracowanie adaptacyjnego firewalla typu host-based broniącego hosta w sieci przed typowymi atakami. Program ma analizować przychodzące pakiety i na ich podstawie wykrywać i klasyfikować atak. Po wykryciu ataku, zadaniem programu jest uruchomienie odpowiednich skryptów (odpowiadających wykrytemu atakowi), które pozwolą na obronę hosta przed wykrytym atakiem. 
+
+## Narzędzia i architektura
+Architektura projektowa składa się z 4 głównych komponentów:
++ Atakowy host - Ubuntu 16.04 LTS (VirtualBox)
++ Firewall - w projekcie tą funkcję pełni program linuksowy iptables 
++ Intrusion Detection System - dla projektu wybrano Snort
++ Skrypty bash/python - odpowiadają za obronę przed atakami
+
+Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
+![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
+
 
 # Snort
 
