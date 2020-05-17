@@ -5,7 +5,7 @@
 - [Instalacja i uruchomienie programu](#instalaja-i-uruchomienie-programu)
   + [Instalacja](#instalacja)
   + [Uruchomienie](#uruchomienie)
-- [Snort](#snort)
+- [Dodatek A - Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
@@ -26,10 +26,10 @@ Architektura projektowa składa się z 4 głównych komponentów:
 Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
 ![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
 
-# Instalacja i uruchomienie programu
+# Instalacja, konfiguracja i uruchomienie programu
 
 ## Instalacja
-Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skrytpy:
+Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skrytpy z folderu 01_skrypty_instalacyjne:
 ```console
 ./python_install.sh
 ./snort_install.sh
@@ -38,11 +38,19 @@ Poprawność instalacji można sprawdzić komendą:
 ```console
 snort -V
 ```
+## Konfiguracja
+Przed uruchomieniem należy skonfigurować SNORT - usuwamy wszystkie reguły domyśle i dodajemy własne. Aby skonfigurować snort należy pobrać pliki z folderu 02_konfiguracja snorta i uruchomić skrypt:
+```console
+./snort_setup
+```
 
 ## Uruchomienie
+Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i uruchomić skrypt:
+```console
+./firewall_start.sh
+```
 
-
-# Snort
+# Dodatek A - Snort
 
 ## Pliki konfiguracyjne dla Snort
 ```console
