@@ -69,9 +69,46 @@ Atak polegający na sprawdzeniu dostępnych portów i działających serwisów n
 
 ![02](https://user-images.githubusercontent.com/39568472/82147991-c732f580-9851-11ea-9f7f-90d2a02a2be8.PNG)
 
+### UDP Port Scanning
++ Opis ataku
+
+Atak polegający na sprawdzeniu dostępnych portów i działających serwisów w protokole UDP na atakowanym hoście.
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![03](https://user-images.githubusercontent.com/39568472/82159768-02a0e480-9891-11ea-8e7c-2065d3494301.PNG)
+
+### LAND Attack
++ Opis ataku
+
+Atak polegający na wysłaniu na otwarty port UDP ogromnej liczby pakietów. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![04](https://user-images.githubusercontent.com/39568472/82159774-0a608900-9891-11ea-8c34-11934a1f932c.PNG)
+
+### UDP Flood
++ Opis ataku
+
+Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pakiecie o rozmiarze większym niż 65 535 bajtów. Może to spowodować awarię atakowanego systemu lub zawieszenie działającej na nim aplikacji.
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![05](https://user-images.githubusercontent.com/39568472/82159780-15b3b480-9891-11ea-9283-35c2eb0f2fc9.PNG)
 
 
+### ICMP Flood
++ Opis ataku
 
+Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pakiecie o rozmiarze większym niż 65 535 bajtów. Może to spowodować awarię atakowanego systemu lub zawieszenie działającej na nim aplikacji.
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![06](https://user-images.githubusercontent.com/39568472/82159804-4398f900-9891-11ea-9084-6254fb8ff8f6.PNG)
+
+### Ping of Death
++ Opis ataku
+
+Atak polegający na wysłaniu do systemu ofiary ogromnej liczby pakietów ICMP. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![07](https://user-images.githubusercontent.com/39568472/82159810-4c89ca80-9891-11ea-83f5-34432231d3dc.PNG)
 
 # Dodatek A Snort
 Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
