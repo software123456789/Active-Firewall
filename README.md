@@ -2,6 +2,9 @@
 # Spis treści
 - [Opis projektu](#opis-projektu)
   + [Narzędznia i architektura](#narzędzia-i-architektura)
+- [Instalacja i uruchomienie programu](#instalaja-i-uruchomienie-programu)
+  + [Instalacja](#instalacja)
+  + [Uruchomienie](#uruchomienie)
 - [Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
@@ -23,20 +26,24 @@ Architektura projektowa składa się z 4 głównych komponentów:
 Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
 ![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
 
+# Instalacja i uruchomienie programu
+
+## Instalacja
+Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skrytpy:
+```console
+./python_install.sh
+./snort_install.sh
+```
+Poprawność instalacji można sprawdzić komendą:
+```console
+snort -V
+```
+
+## Uruchomienie
+
 
 # Snort
 
-## Instalacja Snort na Ubuntu
-Ubuntu 16.04:
-```console
-sudo apt-get update
-# instalacja zaleznosci dla snort:
-sudo apt-get install libpcap-dev bison flex
-# instalacja snort:
-sudo apt-get install snort
-# sprawdzenie instalacji:
-snort -V
-```
 ## Pliki konfiguracyjne dla Snort
 ```console
 cd /etc/snort
