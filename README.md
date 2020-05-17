@@ -6,6 +6,8 @@
   + [Instalacja](#instalacja)
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
+- [Algorytm działania skryptu broniącego hosta TODO](algorytm-działania-skryptu-broniącego-hosta-todo)
+- [Zestaw testów TODO](zestaw-testów-todo)
 - [Dodatek A - Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
@@ -13,6 +15,7 @@
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
   + [Testowanie snort na dwóch hostach](#testowanie-snort-na-dwóch-hostach)
+
 
 # Opis projektu
 Celem tego projektu jest opracowanie adaptacyjnego firewalla typu host-based broniącego hosta w sieci przed typowymi atakami. Program ma analizować przychodzące pakiety i na ich podstawie wykrywać i klasyfikować atak. Po wykryciu ataku, zadaniem programu jest uruchomienie odpowiednich skryptów (odpowiadających wykrytemu atakowi), które pozwolą na obronę hosta przed wykrytym atakiem. 
@@ -51,6 +54,11 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ```console
 ./firewall_start.sh
 ```
+# Algorytm działania skryptu broniącego hosta TODO
+
+# Zestaw testów TODO
+
+
 
 # Dodatek A - Snort
 Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
