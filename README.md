@@ -43,7 +43,7 @@ snort -V
 ## Konfiguracja
 Przed uruchomieniem należy skonfigurować SNORT - usuwamy wszystkie reguły domyśle i dodajemy własne. Aby skonfigurować snort należy pobrać pliki z folderu 02_konfiguracja snorta i uruchomić skrypt:
 ```console
-./snort_setup
+./snort_setup.sh
 ```
 
 ## Uruchomienie
