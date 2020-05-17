@@ -7,8 +7,13 @@
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
 - [Algorytm działania skryptu broniącego hosta TODO](algorytm-działania-skryptu-broniącego-hosta-todo)
-- [Zestaw testów IN PROGRESS](zestaw-testów-in-progress)
+- [Zestaw testów](zestaw-testów-in-progress)
   + [TCP Port Scanning](#tcp-port-scanning)
+  + [UDP Port Scanning](#udp-port-scanning)
+  + [LAND Attack](#land-attack)
+  + [UDP Flood](#udp-flood)
+  + [ICMP Flood](#icmp-flood)
+  + [Ping of Death](#ping-of-death)
 - [Dodatek A Snort](#dodatek-a-snort)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
@@ -58,7 +63,7 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ```
 ## Algorytm działania skryptu broniącego hosta TODO
 
-## Zestaw testów IN PROGRESS
+## Zestaw testów
 ### Tabela priorytetów ataków 
 
 ### TCP Port Scanning
