@@ -2,7 +2,7 @@
 # Spis treści
 - [Opis projektu](#opis-projektu)
   + [Narzędznia i architektura](#narzędzia-i-architektura)
-- [Instalacja i uruchomienie programu](#instalaja-i-uruchomienie-programu)
+- [Instalacja i uruchomienie programu](#instalacja-i-uruchomienie-programu)
   + [Instalacja](#instalacja)
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
