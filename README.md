@@ -18,7 +18,7 @@ Architektura projektowa składa się z 4 głównych komponentów:
 + Atakowy host - Ubuntu 16.04 LTS (VirtualBox)
 + Firewall - w projekcie tą funkcję pełni program linuksowy iptables 
 + Intrusion Detection System - dla projektu wybrano Snort
-+ Skrypty bash/python - odpowiadają za obronę przed atakami
++ Skrypty bash/python - odpowiadają za obronę przed atakami poprzez adaptacyjne konfigurowanie iptables
 
 Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
 ![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
