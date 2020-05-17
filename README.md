@@ -7,7 +7,8 @@
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
 - [Algorytm działania skryptu broniącego hosta TODO](algorytm-działania-skryptu-broniącego-hosta-todo)
-- [Zestaw testów TODO](zestaw-testów-todo)
+- [Zestaw testów IN PROGRESS](zestaw-testów-in-progress)
+  + [TCP Port Scanning](#tcp-port-scanning)
 - [Dodatek A Snort](#dodatek-a-snort)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
@@ -31,9 +32,9 @@ Architektura projektowa składa się z 4 głównych komponentów:
 Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
 ![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
 
-# Instalacja konfiguracja i uruchomienie programu
+## Instalacja konfiguracja i uruchomienie programu
 
-## Instalacja
+### Instalacja
 Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skrytpy z folderu 01_skrypty_instalacyjne:
 ```console
 ./python_install.sh
@@ -44,20 +45,31 @@ Poprawność instalacji można sprawdzić komendą:
 snort -V
 # Powinna zostać wyświetlona zainstalowana wersja SNORT
 ```
-## Konfiguracja
+### Konfiguracja
 Przed uruchomieniem należy skonfigurować SNORT - usuwamy wszystkie reguły domyśle i dodajemy własne. Aby skonfigurować snort należy pobrać pliki z folderu 02_konfiguracja snorta i uruchomić skrypt:
 ```console
 ./snort_setup.sh
 ```
 
-## Uruchomienie
+### Uruchomienie
 Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i uruchomić skrypt:
 ```console
 ./firewall_start.sh
 ```
-# Algorytm działania skryptu broniącego hosta TODO
+## Algorytm działania skryptu broniącego hosta TODO
 
-# Zestaw testów TODO
+## Zestaw testów IN PROGRESS
+### Tabela priorytetów ataków 
+
+### TCP Port Scanning
++ Opis ataku
+
+Atak polegający na sprawdzeniu dostępnych portów i działających serwisów na atakowanym hoście.
++ Przeprowadzenie ataku i reguła wykrywająca SNORT
+
+![02](https://user-images.githubusercontent.com/39568472/82147991-c732f580-9851-11ea-9f7f-90d2a02a2be8.PNG)
+
+
 
 
 
