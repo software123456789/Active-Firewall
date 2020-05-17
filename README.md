@@ -38,6 +38,7 @@ Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skryt
 Poprawność instalacji można sprawdzić komendą:
 ```console
 snort -V
+# Powinna zostać wyświetlona zainstalowana wersja SNORT
 ```
 ## Konfiguracja
 Przed uruchomieniem należy skonfigurować SNORT - usuwamy wszystkie reguły domyśle i dodajemy własne. Aby skonfigurować snort należy pobrać pliki z folderu 02_konfiguracja snorta i uruchomić skrypt:
