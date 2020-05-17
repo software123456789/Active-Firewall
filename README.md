@@ -8,13 +8,14 @@
   + [Konfiguracja](#konfiguracja)
 - [Algorytm działania skryptu broniącego hosta TODO](algorytm-działania-skryptu-broniącego-hosta-todo)
 - [Zestaw testów TODO](zestaw-testów-todo)
-- [Dodatek A - Snort](#snort)
-  + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
+- [Dodatek A Snort](#dodatek-a-snort)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
   + [Utworzenie własnych reguł](#utworzenie-własnych-reguł)
   + [Testowanie konfiguracji](#testowanie-konfiguracji)
   + [Testowanie snort na dwóch hostach](#testowanie-snort-na-dwóch-hostach)
+- [Dodatek B iptables](#dodatek-b-iptables)
+
 
 
 # Opis projektu
@@ -60,7 +61,7 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 
 
 
-# Dodatek A - Snort
+# Dodatek A Snort
 Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
 ## Pliki konfiguracyjne dla Snort
 ```console
@@ -131,4 +132,41 @@ https://www.youtube.com/watch?v=vReAkOq-59I
 
 Teraz uruchamiamy obie maszyny naraz, na tej na której mamy Snorta uruchamiany go. Sprawdzamy też IP komendą ifconfig. Na drugim hoście też sprawdzamy tą komendą IP, powinny być z tej samej sieci, ale różne. Z hosta atakującego wysyłamy ping do tego na którym działa Snort. Powinien się wyświetlić Alert. 
  
+# Dodatek B iptables
+
+Sprawdzenie instalacji i wyświetlenie wszystkich reguł:
+```console
+sudo iptables -L -v
+# Powinno wyświetlić 3 defaultowe CHAIN (INPUT, OUTPUT, FORWARD)
+```
+
+Dodawanie reguł do iptablesl (ogólna forma reguły):
+```console
+sudo iptables -A <chain> -i <interface> -p <protocol> -s <source> --dport <port no.>  -j <target>
+
+<chain> - INPUT (przychodzące), OUTPUT (wychodzące) lub FORWARD (przechodzące przez localhost)
+<interface> - np.  eth0, lo, ppp0
+<protocol> - np. tcp, udp, udplite, icmp
+<source> - adres IP źródła
+<port no.> - port protokołu np. 22 (SSH), 443 (https)
+<target> - co zrobić z pakietem - ACCEPT, DROP lub RETURN
+```
+
+Usunięcie wszystkich reguł z iptables:
+```console
+sudo iptables -F
+```
+
+Zapis to iptables z poziomu skryptu python:
+```python
+def addRule(allert, sourceIp, rule):
+	print('Adding rule: ' + rule)
+	os.system(f"/sbin/iptables {rule}")
+```
+
+
+
+
+
+
 
