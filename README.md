@@ -2,7 +2,7 @@
 # Spis treści
 - [Opis projektu](#opis-projektu)
   + [Narzędznia i architektura](#narzędzia-i-architektura)
-- [Instalacja, konfiguracja i uruchomienie programu](#instalacja,-konfiguracja-i-uruchomienie-programu)
+- [Instalacja konfiguracja i uruchomienie programu](#instalacja-konfiguracja-i-uruchomienie-programu)
   + [Instalacja](#instalacja)
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
@@ -27,7 +27,7 @@ Architektura projektowa składa się z 4 głównych komponentów:
 Poniższy diagram przedstawia relacje pomiędzy opisanymi powyżej komponentami:
 ![01](https://user-images.githubusercontent.com/39568472/82142339-e6268d00-983b-11ea-959e-c44d22582778.PNG)
 
-# Instalacja, konfiguracja i uruchomienie programu
+# Instalacja konfiguracja i uruchomienie programu
 
 ## Instalacja
 Aby zainstalować program w środowisku Linux należy pobrać i uruchomić skrytpy z folderu 01_skrypty_instalacyjne:
