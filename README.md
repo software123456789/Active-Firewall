@@ -53,7 +53,7 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ```
 
 # Dodatek A - Snort
-
+Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
 ## Pliki konfiguracyjne dla Snort
 ```console
 cd /etc/snort
