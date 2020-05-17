@@ -5,6 +5,7 @@
 - [Instalacja i uruchomienie programu](#instalaja-i-uruchomienie-programu)
   + [Instalacja](#instalacja)
   + [Uruchomienie](#uruchomienie)
+  + [Konfiguracja](#konfiguracja)
 - [Dodatek A - Snort](#snort)
   + [Instalacja Snort na Ubuntu](#instalacja-snort-na-ubuntu)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
