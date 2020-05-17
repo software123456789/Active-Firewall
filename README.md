@@ -7,6 +7,7 @@
   + [Uruchomienie](#uruchomienie)
   + [Konfiguracja](#konfiguracja)
 - [Algorytm działania skryptu broniącego hosta TODO](algorytm-działania-skryptu-broniącego-hosta-todo)
+  + [Tabela priorytetów ataków](#tabela-priorytetów-ataków) 
 - [Zestaw testów](zestaw-testów-in-progress)
   + [TCP Port Scanning](#tcp-port-scanning)
   + [UDP Port Scanning](#udp-port-scanning)
@@ -62,10 +63,9 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ./firewall_start.sh
 ```
 ## Algorytm działania skryptu broniącego hosta TODO
-
-## Zestaw testów
 ### Tabela priorytetów ataków 
 
+## Zestaw testów
 ### TCP Port Scanning
 + Opis ataku
 
