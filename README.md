@@ -102,7 +102,7 @@ Atak polegający na wysłaniu na otwarty port UDP ogromnej liczby pakietów. Sys
 ### ICMP Flood
 + Opis ataku
 
-Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pakiecie o rozmiarze większym niż 65 535 bajtów. Może to spowodować awarię atakowanego systemu lub zawieszenie działającej na nim aplikacji.
+Atak polegający na wysłaniu do systemu ofiary ogromnej liczby pakietów ICMP. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![06](https://user-images.githubusercontent.com/39568472/82159804-4398f900-9891-11ea-9084-6254fb8ff8f6.PNG)
