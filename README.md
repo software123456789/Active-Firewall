@@ -69,7 +69,7 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ### TCP Port Scanning
 + Opis ataku
 
-Atak polegający na sprawdzeniu dostępnych portów i działających serwisów na atakowanym hoście.
+Atak polegający na sprawdzeniu dostępnych portów i działających serwisów w protokole TCP na atakowanym hoście.
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![02](https://user-images.githubusercontent.com/39568472/82147991-c732f580-9851-11ea-9f7f-90d2a02a2be8.PNG)
