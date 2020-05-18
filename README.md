@@ -85,7 +85,7 @@ Atak polegający na sprawdzeniu dostępnych portów i działających serwisów w
 ### LAND Attack
 + Opis ataku
 
-Atak polegający na wysłaniu na otwarty port UDP ogromnej liczby pakietów. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów
+Atak polegający na wysłaniu na otwarty port hosta złośliwego pakietu. Pakiet zawiera adres docelowy i adres do odpowiedzi ustawiony na ten sam adres, który jest adresem hosta-ofiary. W efekcie host odpowiada w nieskończoność sam do siebie.  
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![04](https://user-images.githubusercontent.com/39568472/82159774-0a608900-9891-11ea-8c34-11934a1f932c.PNG)
