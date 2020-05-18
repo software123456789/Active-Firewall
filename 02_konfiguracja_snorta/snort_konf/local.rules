@@ -6,16 +6,18 @@
 # additions here.
 # alert tcp any any -> any any (msg:"TEST ALERT: simple TCP connection attempt"; sid:1000001; rev:1;)
 
-# alert icmp any any -> any any (msg:"icmp alert"; sid:1000002; rev:1;)
+# alert icmp any any -> 10.0.2.15 any (msg:"icmp alert"; sid:1000002; rev:1;)
 
-alert tcp any any -> any any (msg:"TCP PORT SCAN ALERT"; detection_filter:track by_src, count 100, seconds 1; sid:1000003; rev:1;)
+alert tcp any any -> 10.0.2.15 any (msg:"TCP PORT SCAN ALERT"; detection_filter:track by_src, count 990, seconds 1; sid:1000003; rev:1;)
 
-alert udp any any -> any any (msg:"UDP PORT SCAN ALERT"; detection_filter:track by_src, count 15, seconds 3; sid:1000004; rev:1;)
+alert udp any any -> 10.0.2.15 any (msg:"UDP PORT SCAN ALERT"; detection_filter:track by_src, count 20, seconds 3; sid:1000004; rev:1;)
 
-alert tcp any any -> any 80 (msg:"LAND ATTACK ALERT"; sameip; flags:S; sid: 1000005; rev:1;)
+alert tcp any any -> 10.0.2.15 80 (msg:"LAND ATTACK ALERT"; sameip; flags:S; sid: 1000005; rev:1;)
 
-alert udp any any -> any 21 (msg:"UDP FLOOD ALERT"; detection_filter:track by_dst, count 75, seconds 1; sid:1000006; rev:1;)
+alert udp any any -> 10.0.2.15 21 (msg:"UDP FLOOD ALERT"; detection_filter:track by_dst, count 75, seconds 1; sid:1000006; rev:1;)
 
-alert icmp any any -> any any (msg:"ICMP FLOOD ALERT"; detection_filter:track by_dst, count 500, seconds 1; sid:1000007; rev:1;)
+alert icmp any any -> 10.0.2.15 any (msg:"ICMP FLOOD ALERT"; detection_filter:track by_dst, count 500, seconds 1; sid:1000007; rev:1;)
 
-alert icmp any any -> any any (msg:"PING OF DEATH ALERT"; dsize:>50000; itype: 8; icode:0; detection_filter:track by_src, count 1, seconds 1; sid:1000008; rev:1;)
+alert icmp any any -> 10.0.2.15 any (msg:"ICMP FLOOD ALERT POSSIBLE"; detection_filter:track by_dst, count 100, seconds 1; sid:1000008; rev:1;)
+
+alert icmp any any -> 10.0.2.15 any (msg:"PING OF DEATH ALERT"; dsize:>50000; itype: 8; icode:0; detection_filter:track by_src, count 1, seconds 1; sid:1000009; rev:1;)
