@@ -93,7 +93,7 @@ Atak polegający na wysłaniu na otwarty port hosta złośliwego pakietu. Pakiet
 ### UDP Flood
 + Opis ataku
 
-Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pakiecie o rozmiarze większym niż 65 535 bajtów. Może to spowodować awarię atakowanego systemu lub zawieszenie działającej na nim aplikacji.
+Atak polegający na wysłaniu na otwarty port UDP ogromnej liczby pakietów. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów. 
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![05](https://user-images.githubusercontent.com/39568472/82159780-15b3b480-9891-11ea-9283-35c2eb0f2fc9.PNG)
@@ -110,7 +110,7 @@ Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pak
 ### Ping of Death
 + Opis ataku
 
-Atak polegający na wysłaniu do systemu ofiary ogromnej liczby pakietów ICMP. System ofiary będzie zmuszony odpowiadać wieloma pakietami ICMP, stając się w końcu nieosiągalnym dla innych klientów
+Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pakiecie o rozmiarze większym niż 65 535 bajtów. Może to spowodować awarię atakowanego systemu lub zawieszenie działającej na nim aplikacji.
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![07](https://user-images.githubusercontent.com/39568472/82159810-4c89ca80-9891-11ea-83f5-34432231d3dc.PNG)
