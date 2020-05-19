@@ -15,6 +15,7 @@
   + [UDP Flood](#udp-flood)
   + [ICMP Flood](#icmp-flood)
   + [Ping of Death](#ping-of-death)
+- [Scenariusz testowy](#scenariusz-testowy)
 - [Dodatek A Snort](#dodatek-a-snort)
   + [Pliki konfiguracyjne dla Snort](#pliki-konfiguracyjne-dla-snort)
   + [Wyłączenie domyślnych reguł](#wyłączenie-domyślnych-reguł)
@@ -116,6 +117,9 @@ Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pak
 + Przeprowadzenie ataku i reguła wykrywająca SNORT
 
 ![07](https://user-images.githubusercontent.com/39568472/82159810-4c89ca80-9891-11ea-83f5-34432231d3dc.PNG)
+
+# Scenariusz testowy
+![09](https://user-images.githubusercontent.com/39568472/82311893-9922f200-99c6-11ea-8114-ff4f442f38be.PNG)
 
 # Dodatek A Snort
 Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
