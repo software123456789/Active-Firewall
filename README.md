@@ -6,7 +6,7 @@
   + [Instalacja](#instalacja)
   + [Konfiguracja](#konfiguracja)
   + [Uruchomienie](#uruchomienie)
-- [Algorytm działania skryptu broniącego hosta](algorytm-działania-skryptu-broniącego-hosta)
+- [Algorytm działania skryptu broniącego hosta](#algorytm-działania-skryptu-broniącego-hosta)
   + [Tabela priorytetów ataków](#tabela-priorytetów-ataków) 
 - [Zestaw testów](zestaw-testów-in-progress)
   + [TCP Port Scanning](#tcp-port-scanning)
