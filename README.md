@@ -8,7 +8,7 @@
   + [Uruchomienie](#uruchomienie)
 - [Algorytm działania skryptu broniącego hosta](#algorytm-działania-skryptu-broniącego-hosta)
   + [Tabela priorytetów ataków](#tabela-priorytetów-ataków) 
-- [Zestaw testów](zestaw-testów-in-progress)
+- [Zestaw testów](#zestaw-testów)
   + [TCP Port Scanning](#tcp-port-scanning)
   + [UDP Port Scanning](#udp-port-scanning)
   + [LAND Attack](#land-attack)
