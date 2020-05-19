@@ -67,7 +67,7 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ![10](https://user-images.githubusercontent.com/39568472/82321181-bced3480-99d4-11ea-835c-a6ddf6b9e2b8.PNG)
 
 ### Tabela priorytetów ataków 
-![08](https://user-images.githubusercontent.com/39568472/82306290-25c9b200-99bf-11ea-8d4d-c7d7e118b96c.PNG)
+![08](https://user-images.githubusercontent.com/39568472/82321306-e908b580-99d4-11ea-9819-2c61eed009cc.PNG)
 
 
 ## Zestaw testów
