@@ -224,7 +224,11 @@ def addRule(allert, sourceIp, rule):
 	os.system(f"/sbin/iptables {rule}")
 ```
 
-
+Ustwienie reguły na określony czas (UWAGA: Czas UTC !)
+```console
+sudo iptables -A INPUT -s 10.0.2.4 -m time --timestart 10:00 --timestop 10:01 -j DROP
+```
+Powyższa komenda ustawia działanie reguły pomiędzy 10:00 i 10:01 czasu UTC.
 
 
 
