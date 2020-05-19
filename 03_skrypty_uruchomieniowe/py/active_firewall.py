@@ -52,4 +52,5 @@ def activeFirewall(line):
 				addRule(allert, sourceIp,rule)
 
 for line in sys.stdin:
+	print(line)
 	activeFirewall(line)
