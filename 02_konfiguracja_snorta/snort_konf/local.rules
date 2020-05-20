@@ -18,6 +18,6 @@ alert udp any any -> 10.0.2.15 21 (msg:"UDP FLOOD ALERT"; detection_filter:track
 
 alert icmp any any -> 10.0.2.15 any (msg:"ICMP FLOOD ALERT"; detection_filter:track by_dst, count 500, seconds 1; sid:1000007; rev:1;)
 
-alert icmp any any -> 10.0.2.15 any (msg:"ICMP FLOOD ALERT POSSIBLE"; detection_filter:track by_dst, count 100, seconds 1; sid:1000008; rev:1;)
+alert icmp any any -> 10.0.2.15 any (msg:"ICMP FLOOD POSSIBLE ALERT"; detection_filter:track by_dst, count 100, seconds 1; sid:1000008; rev:1;)
 
 alert icmp any any -> 10.0.2.15 any (msg:"PING OF DEATH ALERT"; dsize:>50000; itype: 8; icode:0; detection_filter:track by_src, count 1, seconds 1; sid:1000009; rev:1;)
