@@ -32,7 +32,7 @@ attack_priorities = {
 }
 
 ips_levels_of_danger = {}
-rules = []
+rules = set()
 
 LEVEL_OF_DANGER_TRESHOLD = 1500
 
@@ -99,10 +99,11 @@ def getRule(ip, port, protocol):
 
 
 def addRule(allert, sourceIp, rule):
-	rules.append(rule)
-	print('Adding rule: ' + rule)
-	command = "/sbin/iptables " + rule
-	os.system(command)
+	if rule not in rules:
+		rules.add(rule)
+		print('Adding rule: ' + rule)
+		command = "/sbin/iptables " + rule
+		os.system(command)
 
 
 def findIpAddress(line, num):
@@ -133,7 +134,6 @@ def cleanIptables():
 	time_range = getTimeRangeUTC()
 	print("Checking for old  rules..... .... ...")
 	for x in rules:
-		print("x" + x)
 		timeEndFromRule = x.split("--timestop ",1)[1]
 		y = timeEndFromRule[:5] 
 		if(y != time_range[0] and y != time_range[1]):
