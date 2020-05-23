@@ -6,7 +6,8 @@ import re
 import subprocess
 import io
 import datetime
-
+import time
+import threading
 
 print("Firewall is active")
 
@@ -31,6 +32,7 @@ attack_priorities = {
 }
 
 ips_levels_of_danger = {}
+rules = []
 
 LEVEL_OF_DANGER_TRESHOLD = 1500
 
@@ -38,6 +40,7 @@ LEVEL_OF_DANGER_TRESHOLD = 1500
 IP_REGEX = r"(\d{1,3}\.){3}\d{1,3}"
 OPTIONAL_PORT_REGEX = r"(:\d{1,5})*"
 IP_PORT_REGEX = IP_REGEX + OPTIONAL_PORT_REGEX
+
 
 # zwraca liste stringow w formacie:
 # [ 'hh:mm', 'hh:mm+1' ]
@@ -96,9 +99,11 @@ def getRule(ip, port, protocol):
 
 
 def addRule(allert, sourceIp, rule):
+	rules.append(rule)
 	print('Adding rule: ' + rule)
 	command = "/sbin/iptables " + rule
 	os.system(command)
+
 
 def findIpAddress(line, num):
 	matched = re.search(IP_PORT_REGEX + " -> " + IP_PORT_REGEX, line);
@@ -124,6 +129,26 @@ def activeFirewall(line):
 					addRule(allert, sourceIp, rule)
 					ips_levels_of_danger[sourceIp] = 0
 
+def cleanIptables():
+	time_range = getTimeRangeUTC()
+	print("Checking for old  rules..... .... ...")
+	for x in rules:
+		print("x" + x)
+		timeEndFromRule = x.split("--timestop ",1)[1]
+		y = timeEndFromRule[:5] 
+		if(y != time_range[0] and y != time_range[1]):
+			print(x[2:])
+			command = "/sbin/iptables" + " -D" + x[2:]
+			print(command)
+			os.system(command)
+			print("x" + x)
+			rules.remove(x)
+	time.sleep(30)
+
+
 for line in sys.stdin:
+	thread = threading.Thread(target=cleanIptables)
+	thread.daemon = True
+	thread.start()
 	print(line)
 	activeFirewall(line)
