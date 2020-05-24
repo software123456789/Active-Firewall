@@ -64,10 +64,10 @@ Abu uruchomić program należy pobrać folder 03_skrypty_uruchomieniowe i urucho
 ./firewall_start.sh
 ```
 ## Algorytm działania skryptu broniącego hosta
-![10](https://user-images.githubusercontent.com/39568472/82321181-bced3480-99d4-11ea-835c-a6ddf6b9e2b8.PNG)
+![10](https://user-images.githubusercontent.com/39568472/82753492-58f8b080-9dc6-11ea-842f-3e82f2a83a80.PNG)
 
 ### Tabela priorytetów ataków 
-![08](https://user-images.githubusercontent.com/39568472/82321306-e908b580-99d4-11ea-9819-2c61eed009cc.PNG)
+![08](https://user-images.githubusercontent.com/39568472/82753503-6d3cad80-9dc6-11ea-82d1-eab99540bedd.PNG)
 
 
 ## Zestaw testów
@@ -121,7 +121,7 @@ Atak na system polegający na wysłaniu zapytania ping (ICMP Echo Request) w pak
 ![07](https://user-images.githubusercontent.com/39568472/82159810-4c89ca80-9891-11ea-83f5-34432231d3dc.PNG)
 
 # Scenariusz testowy
-![09](https://user-images.githubusercontent.com/39568472/82311893-9922f200-99c6-11ea-8114-ff4f442f38be.PNG)
+![09](https://user-images.githubusercontent.com/39568472/82753497-60b85500-9dc6-11ea-8521-faf0780a5468.PNG)
 
 # Dodatek A Snort
 Po instalacji SNORT możemy przejrzeć i skonfigurować pliki odpowiadające za działanie SNORT.
